@@ -28,11 +28,14 @@
         </li>
       </ul>
       <form class="d-flex">
+      <% if user_signed_in? %>
         <%# <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> %>
-       <%= link_to 'Sing Up', new_user_registration_path, class:'btn btn-outline-dark' %>
-       <%= link_to 'Sing In', new_user_session_path, class:'btn btn-outline-dark', style:'margin-left: 5px' %>
+       
        <%= link_to 'Sing Out', destroy_user_session_path, method: :delete, class:'btn btn-outline-dark', style:'margin-left: 5px' %>
-
+      <% else %>
+        <%= link_to 'Sing Up', new_user_registration_path, class:'btn btn-outline-dark' %>
+        <%= link_to 'Sing In', new_user_session_path, class:'btn btn-outline-dark', style:'margin-left: 5px' %>
+      <% end %>
 
       </form>
     </div>
