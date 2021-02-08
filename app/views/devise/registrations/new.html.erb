@@ -9,23 +9,23 @@
 
         <div class="field">
           <% f.label :email %><br />
-          <%= f.email_field :email, :size => 80,autofocus: true, autocomplete: "email", class:"form-label" , placeholder:"Email" %>
+          <%= f.email_field :email, :size => 60,autofocus: true, autocomplete: "email", class:"form-label" , placeholder:"Email" %>
         </div>
 
         <div class="field">
           <% f.label :password %>
     
-          <%= f.password_field :password,:size => 80, autocomplete: "new-password", class:"form-label", placeholder:"Password (6 characters minimum)" %>
+          <%= f.password_field :password,:size => 60, autocomplete: "new-password", class:"form-label", placeholder:"Password (6 characters minimum)" %>
         </div>
 
         <div class="field">
           <% f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation,:size => 80 ,autocomplete: "new-password", placeholder:"Password confirmation"   %>
+          <%= f.password_field :password_confirmation,:size => 60 ,autocomplete: "new-password", placeholder:"Password confirmation"   %>
         </div>
         <br>
 
         <div class="actions">
-          <%= f.submit "Sign up" , class:"btn btn-primary" %>
+          <%= f.submit "Sign up" , class:"btn btn-outline-dark" %>
         </div>
         
       <% end %>
