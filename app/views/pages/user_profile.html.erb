@@ -1,2 +1,9 @@
 
 <h1>Hello <%= current_user.name %></h1>
+
+
+<% @movies.each do |display|  %>
+<%= image_tag display.poster %>
+<%= display.title %>
+<%= display.rating %>
+<% end %>
