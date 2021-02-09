@@ -14,6 +14,6 @@ user1 = User.create(email: 'test@email.com', password: 123_456, name: 'Daniel', 
 user1.save!
 print 'created'
 
-sexy_beast = Movie.create(title: 'Sexy Beast', rating: 7.3, poster: File.open(Rails.root + 'app/assets/images/Sexybeast.jpg'))
+sexy_beast = Movie.create(title: 'Sexy Beast', rating: 7.3, poster: File.open(Rails.root + 'app/assets/images/Sexybeast.jpg'), description: 'Brutal gangster Don Logan recruits "retired" safecracker Gal for one last job, but it goes badly for both of them.')
 sexy_beast.save!
 puts 'Movie Created'

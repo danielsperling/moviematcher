@@ -1,9 +1,15 @@
 
-<h1>Hello <%= current_user.name %></h1>
 
 
-<% @movies.each do |display|  %>
-<%= image_tag display.poster %>
-<%= display.title %>
-<%= display.rating %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+       <h1>Hello <%= current_user.name %></h1>
+        <% @movies.each do |display|  %>
+        <%= display.title %>
+       <h5> Rating: <%= display.rating %></h5>
+        <%= display.description %>
+        <% end %>
+    </div>
+  </div>
+</div>
