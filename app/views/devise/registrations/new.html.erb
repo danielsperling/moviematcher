@@ -6,6 +6,10 @@
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
+        <div>
+          <% f.label :name %><br />
+          <%= f.text_field :name,:size => 60, autofocus: true, placeholder:"Username" %>
+        </div>
 
         <div class="field">
           <% f.label :email %><br />
@@ -22,11 +26,13 @@
           <% f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation,:size => 60 ,autocomplete: "new-password", placeholder:"Password confirmation"   %>
         </div>
+
+
         <br>
 
         <div class="actions">
           <%= f.submit "Sign up" , class:"btn btn-outline-dark" %>
-          <%#= link_to 'Sign up',  %>
+         
         </div>
         
       <% end %>

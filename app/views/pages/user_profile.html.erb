@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-       <h1>Hello <%= current_user.name %></h1>
+       <h1>Hello <%= current_user.username %></h1>
         <% @movies.each do |display|  %>
         <%= display.title %>
        <h5> Rating: <%= display.rating %></h5>
