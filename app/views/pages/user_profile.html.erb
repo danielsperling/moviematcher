@@ -1,15 +1,17 @@
 
-
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
        <h1>Hello <%= current_user.username %></h1>
-        <% @movies.each do |display|  %>
-        <%= display.title %>
-       <h5> Rating: <%= display.rating %></h5>
-        <%= display.description %>
-        <% end %>
-    </div>
-  </div>
+
+
+
+<div class="poster ">
+   <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
+   <div class="overlay overlay--blur">
+       <% @movies.each do |display|  %>
+        <h3> <%= display.title %> </h3>  
+        <h5> ⭐️ &nbsp <%= display.rating %></h5>
+       <div>
+          <%= display.description %>
+      </div>
+    <% end %>
+   </div>
 </div>
