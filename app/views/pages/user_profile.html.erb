@@ -13,7 +13,7 @@
   <div class="row">
   
   <%= @movies.each do |display|  %>
-      <div class="movie-card">
+      <div class="col-12 col-xl-6 movie-card">
         <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
 
         <div class="overlay">
@@ -24,6 +24,7 @@
           </div>
         </div>
       </div>
+
    <% end %>
   </div>
 
