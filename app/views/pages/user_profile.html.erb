@@ -10,22 +10,20 @@
     </div>
   </div>
 
-  <div class="row"> 
-    <% @movies.each do |display|  %>
-    <div class="movies">
-      <div class="poster">
-        <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
+
+    <div class="movie-card">
+      <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
+
+      <div class="overlay">
+        <h3>Title</h3>
+        <h4>Year</h4>
+        <div> <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur molestiae assumenda quod, est sequi deleniti.</h5>
+        </div>
       </div>
-      <div class="overlay overlay--blur">
-        <h3> <%= display.title %> </h3>  
-        <h5> ⭐️ &nbsp <%= display.rating %></h5>
-        <div>
-          <%= display.description %>
-        </div> 
-      </div>
-     
     </div>
-    <% end %>
-  </div>
+
+
+
+ 
 </div>
 
