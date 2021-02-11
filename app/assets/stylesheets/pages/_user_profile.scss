@@ -46,3 +46,15 @@
 .overlay:hover > * {
   transform: translateY(0px);
 }
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-information {
+  display: flex;
+  flex-direction: row;
+}
