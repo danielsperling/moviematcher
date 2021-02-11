@@ -1,11 +1,15 @@
 .movie-card {
   position: relative;
   width: 250px;
+  display: flex;
+  flex-direction: row;
 }
 
 .movie-poster {
   display: block;
   width: 250px;
+  display: flex;
+  flex-direction: row;
 }
 
 .overlay {

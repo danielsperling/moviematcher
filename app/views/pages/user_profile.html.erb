@@ -12,20 +12,20 @@
 
   <div class="row">
   
-    <div class="movie-card">
-      <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
+  <%= @movies.each do |display|  %>
+      <div class="movie-card">
+        <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
 
-      <div class="overlay">
-        <h3>Title</h3>
-        <h4>Year</h4>
-        <div> <h5>Lorem ipsum adipisicing elit. Consequatur molestiae assumenda quod, est sequi deleniti.</h5>
+        <div class="overlay">
+          <h3><%= display.title %></h3>
+          <h4>⭐️ <%= display.rating %></h4>
+          <div>
+            <h5><%= display.description %></h5>
+          </div>
         </div>
       </div>
-    </div>
+   <% end %>
+  </div>
 
-  
-
-
- 
 </div>
 
