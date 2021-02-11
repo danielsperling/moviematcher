@@ -1,29 +1,32 @@
 <div class="container">
-
-<div class="profile-information">
-
-  <div>
-    <h1>Hello <%= current_user.username %></h1>
-  </div>
-  <div>
-    <h3> <%= image_tag 'popcorn.png', class: 'avatar'%></h3>
-  </div>
-
-</div>
-   <% @movies.each do |display|  %>
-  <div class="movies">
-  <div class="poster ">
-    <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
-    <div class="overlay overlay--blur">
-          <h3> <%= display.title %> </h3>  
-          <h5> ⭐️ &nbsp <%= display.rating %></h5>
-        <div>
-            <%= display.description %>
-        </div>
-      
+  
+  <div class="row">
+    <div class="col-sm-12 col-xl-6 profile-information">
+      <h1>Hello <%= current_user.username %></h1>
+    </div>
+    <div class="col-sm-12 col-xl-6 avatar-bio">
+      <h3> <%= image_tag 'popcorn.png', class: 'avatar'%></h3>
+      <%= current_user.bio %>
     </div>
   </div>
-      <% end %>
-</div>
+
+  <div class="row">
+  
+  <%= @movies.each do |display|  %>
+      <div class="col-12 col-xl-6 movie-card">
+        <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
+
+        <div class="overlay">
+          <h3><%= display.title %></h3>
+          <h4>⭐️ <%= display.rating %></h4>
+          <div>
+            <h5><%= display.description %></h5>
+          </div>
+        </div>
+      </div>
+
+   <% end %>
+  </div>
 
 </div>
+

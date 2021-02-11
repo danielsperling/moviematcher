@@ -10,7 +10,7 @@ User.destroy_all
 Movie.destroy_all
 
 print 'User1'
-user1 = User.create(email: 'test@email.com', password: 123_456, name: 'Daniel', username: 'Daniel13')
+user1 = User.create(email: 'test@email.com', password: 123_456, name: 'Testi', username: 'Testi The Test', bio: 'I like action movies and sci-fi movies')
 user1.save!
 print 'created'
 
