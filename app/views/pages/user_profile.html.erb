@@ -1,17 +1,19 @@
+<div class="container">
 
-       <h1>Hello <%= current_user.username %></h1>
+ <h1>Hello <%= current_user.username %></h1>
 
 
+  <div class="poster ">
+    <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
+    <div class="overlay overlay--blur">
+        <% @movies.each do |display|  %>
+          <h3> <%= display.title %> </h3>  
+          <h5> ⭐️ &nbsp <%= display.rating %></h5>
+        <div>
+            <%= display.description %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<div class="poster ">
-   <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
-   <div class="overlay overlay--blur">
-       <% @movies.each do |display|  %>
-        <h3> <%= display.title %> </h3>  
-        <h5> ⭐️ &nbsp <%= display.rating %></h5>
-       <div>
-          <%= display.description %>
-      </div>
-    <% end %>
-   </div>
 </div>

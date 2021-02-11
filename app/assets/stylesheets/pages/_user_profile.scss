@@ -1,12 +1,13 @@
 .poster {
   position: relative;
   width: 250px;
-  border: 1px black solid;
+  border-radius: 5px;
 }
 
 .movie-poster {
   display: block;
   width: 100%;
+  border-radius: 5px;
 }
 
 .overlay {
@@ -23,19 +24,23 @@
   align-items: center;
   opacity: 0;
   transition: opacity 0.25s;
+  border-radius: 5px;
 }
 
 .overlay--blur {
   backdrop-filter: blur(5px);
+  border-radius: 5px;
 }
 
 .overlay > * {
   transform: translateY(50px);
   transition: transform 0.25s;
+  border-radius: 5px;
 }
 
 .overlay:hover {
   opacity: 1;
+  border-radius: 5px;
 }
 
 .overlay:hover > * {
