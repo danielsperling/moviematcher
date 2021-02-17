@@ -16,26 +16,25 @@
     </div>
   </div>
 
-<div class="row"> 
+  <div class="row">
 
-<% @movies.each do |display|  %>
-    <div class="col-12 col-xl-4 movie-card">
-      <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
+    <% @movies.each do |display|  %>
+        <div class="col-12 col-xl-4" id="movie-card">
+          <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
 
-      <div class="overlay overlay--blur ">
-        <h3><%= display.title %></h3>
-        <h4>⭐️ <%= display.rating %></h4>
-        <div>
-          <h5><%= display.description %></h5>
+          <div class="overlay overlay--blur">
+            <h3><%= display.title %></h3>
+            <h4>⭐️ <%= display.rating %></h4>
+            <div>
+              <h5><%= display.description %></h5>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
- <% end %>
-</div>
-  
+    <% end %>
+  </div>
 
-</div>
+</div>  
 
 
 
