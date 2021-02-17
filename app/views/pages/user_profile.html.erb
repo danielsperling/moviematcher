@@ -13,7 +13,21 @@
 
       <%= button_to 'Edit Profile', root_path, method: :get, class: "btn btn-outline-dark" %> 
 
+<%= @movies.each do |display|  %>
+    <div class="col-12 col-xl-4 movie-card">
+      <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
 
+      <div class="overlay">
+        <h3><%= display.title %></h3>
+        <h4>⭐️ <%= display.rating %></h4>
+        <div>
+          <h5><%= display.description %></h5>
+        </div>
+      </div>
+    </div>
+
+ <% end %>
+</div>
   
 
 </div>

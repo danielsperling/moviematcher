@@ -29,21 +29,3 @@ puts 'Movie Created'
 the_matrix = Movie.create(title: 'The Matrix', rating: 7.3, poster: File.open(Rails.root + 'app/assets/images/Sexybeast.png'), description: 'When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.')
 the_matrix.save!
 puts 'Movie Created'
-
-
-
-<%= @movies.each do |display|  %>
-    <div class="col-12 col-xl-4 movie-card">
-      <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
-
-      <div class="overlay">
-        <h3><%= display.title %></h3>
-        <h4>⭐️ <%= display.rating %></h4>
-        <div>
-          <h5><%= display.description %></h5>
-        </div>
-      </div>
-    </div>
-
- <% end %>
-</div>
