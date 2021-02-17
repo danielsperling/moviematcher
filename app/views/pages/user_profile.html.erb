@@ -6,12 +6,16 @@
     </div>
     <div class="col-sm-12 col-xl-6 avatar-bio">
       <h3> <%= image_tag 'popcorn.png', class: 'avatar'%></h3>
-      <%= current_user.bio %>
+      <% if current_user.bio == nil %>
+        <h5> Edit your bio!</h5>
+      <% else  %>
+        <%= current_user.bio %>
+      <% end %>
     </div>
   </div>
 
 
-      <%= button_to 'Edit Profile', root_path, method: :get, class: "btn btn-outline-dark" %> 
+      <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: "btn btn-outline-dark" %> 
 
 <%= @movies.each do |display|  %>
     <div class="col-12 col-xl-4 movie-card">
