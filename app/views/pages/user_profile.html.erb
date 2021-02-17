@@ -11,17 +11,18 @@
       <% else  %>
         <%= current_user.bio %>
       <% end %>
+            <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: "btn btn-outline-dark" %> 
+
     </div>
   </div>
 
+<div class="row"> 
 
-      <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: "btn btn-outline-dark" %> 
-
-<%= @movies.each do |display|  %>
+<% @movies.each do |display|  %>
     <div class="col-12 col-xl-4 movie-card">
       <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
 
-      <div class="overlay">
+      <div class="overlay overlay--blur ">
         <h3><%= display.title %></h3>
         <h4>⭐️ <%= display.rating %></h4>
         <div>
