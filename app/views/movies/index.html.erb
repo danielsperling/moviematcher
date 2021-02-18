@@ -3,22 +3,8 @@
     <h3> <%= @response%></h3>
     
 
+<% @response.each do |values| %> 
+<h3> <%=  %></h3>
+<% end %>
 
 
-  <div class="row">
-
-    <% @response.each do |display|  %>
-        <div class="col-12 col-xl-4" id="movie-card">
-          <%= image_tag display['Poster'], class: 'movie-poster' %>
-
-          <div class="overlay overlay--blur">
-            <h3><%= display['Title'] %></h3>
-            <h4>⭐️ <%= display['Value'] %></h4>
-            <div>
-              <h5><%= display['Plot'] %></h5>
-            </div>
-          </div>
-        </div>
-
-    <% end %>
-  </div>
