@@ -1,7 +1,24 @@
 <h1> This are is the movies page </h1>
-    <h1>  <%= @results  %> </h1>
-    <h3> <%= @results.class %> </h3>
+   
+    <h3> <%= @response%></h3>
     
 
 
 
+  <div class="row">
+
+    <% @response.each do |display|  %>
+        <div class="col-12 col-xl-4" id="movie-card">
+          <%= image_tag display['Poster'], class: 'movie-poster' %>
+
+          <div class="overlay overlay--blur">
+            <h3><%= display['Title'] %></h3>
+            <h4>⭐️ <%= display['Value'] %></h4>
+            <div>
+              <h5><%= display['Plot'] %></h5>
+            </div>
+          </div>
+        </div>
+
+    <% end %>
+  </div>
