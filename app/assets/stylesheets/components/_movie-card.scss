@@ -1,6 +1,9 @@
-.movie-card {
+#movie-card {
   position: relative;
   width: 250px;
+  margin-top: 50px;
+  margin-right: 25px;
+  align-items: center;
 }
 
 .movie-poster {
@@ -15,7 +18,7 @@
   top: 0;
   left: -15;
   height: 100%;
-  width: calc(100% - 22px);
+  width: 250px;
   background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   display: flex;
