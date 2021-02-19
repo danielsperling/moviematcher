@@ -29,3 +29,4 @@ puts 'Movie Created'
 the_matrix = Movie.create(title: 'The Matrix', rating: 7.3, poster: File.open(Rails.root + 'app/assets/images/Sexybeast.png'), description: 'When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.')
 the_matrix.save!
 puts 'Movie Created'
+
