@@ -1,6 +1,21 @@
 <div class="container">
+    <div class="row">
+        <% @data.each do |display|  %>
+            <div class="col-12" id="movie-card">
+                <% if display["Poster"] != 'N/A' && display["Type"] == 'movie' %>
+                    <%= image_tag display["Poster"], class: 'movie-poster' %>
 
- <h5><%= @raw_data %></h5>
+                    <div class="overlay overlay--blur">
+                        <h3><%= display['Title'] %></h3>
+                    </div>
+            </div>
+                <% elsif display['Poster'] == "N/A" %>
+                <% end %>
+
+        <% end %>
+    </div>
+</div>
+
  
     
 
