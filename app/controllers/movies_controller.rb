@@ -12,7 +12,7 @@ PAGE5 = '"&page=5'.freeze
 PAGE6 = '"&page=6'.freeze
 PAGE7 = '"&page=7'.freeze
 
-RANDOM_MOVIE = %w[action].sample
+RANDOM_MOVIE = %w[action love star pirates].sample
 
 class MoviesController < ApplicationController
   def index
