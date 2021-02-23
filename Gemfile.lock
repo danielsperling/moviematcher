@@ -238,6 +238,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   json (~> 1.8, >= 1.8.3)
   listen (~> 3.2)
+  nokogiri
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
