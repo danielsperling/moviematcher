@@ -1,7 +1,7 @@
 <div class="container">
 <% @movies.each do |display| %>
 <h1><%= display.title %></h1>
-<h3><%= "#{display.poster.gsub(/\[/, "").gsub(/\]/, "")}" %></h3>
+<%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "") %> 
 <% end %>
     
 </div>
