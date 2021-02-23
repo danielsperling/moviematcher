@@ -1,26 +1,18 @@
 <div class="container">
 
-    <div class="row"> 
-        <% @data.each do |display|  %>
-            <% if display["Poster"] != 'N/A' && display["Type"] == 'movie' %>
-                <div class="col-12" id="movie-card">
-                        <%= image_tag display["Poster"], class: 'movie-poster' %>
-
-                        <div class="overlay overlay--blur">
-                            <h3><%= display['Title'] %></h3>
-                        </div>
-                </div>
-            <% elsif display['Poster'] == "N/A" %>
-
-            <% end %>
-
-        <% end %>
+<div class="row"> 
+  <% @movies.each do |display|  %>
+    <div class="col-12" id="movie-card">
+      <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
+      <div class="overlay overlay--blur">
+        <h3><%= display.title %></h3>
+        <h4> <%= display.year %></h4>
+        <div>
+          <h5><%= display.plot %></h5>
+        </div>
+      </div>
     </div>
+  <% end %>
 </div>
-
- 
-    
-
-
-
+</div>
 
