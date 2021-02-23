@@ -1,26 +1,15 @@
 <div class="container">
-<h3><%= @data %></h3>
-
-    <div class="row"> 
-        <% @data.each do |display|  %>
-            <% if display["Poster"] != 'N/A' && display["Type"] == 'movie' %>
-                <div class="col-12" id="movie-card">
-                        <%= image_tag display["Poster"], class: 'movie-poster' %>
-
-                        <div class="overlay overlay--blur">
-                            <h3><%= display['Title'] %></h3>
-                        </div>
-                </div>
-            <% elsif display['Poster'] == "N/A" %>
-
-            <% end %>
-
-        <% end %>
-    </div>
+<% @movies.each do |display| %>
+<h1><%= display.title %></h1>
+<h3><%= "#{display.poster.gsub(/\[/, "").gsub(/\]/, "")}" %></h3>
+<% end %>
+    
 </div>
 
  
     
+
+
 
 
 

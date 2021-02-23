@@ -1,3 +1,50 @@
+class MoviesController < ApplicationController
+  
+  def index
+    @movies = Movie.all
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#omdb API
+
 # require 'json'
 # require 'httparty'
 
@@ -14,8 +61,8 @@
 
 # RANDOM_MOVIE = %w[action love star pirates].sample
 
-class MoviesController < ApplicationController
-  def index
+
+
     # response_1 = HTTParty.get(BASE_URL + RANDOM_MOVIE + PAGE1 + API_KEY)
     # @raw_data_1 = JSON.parse(response_1.body)
     # @data_1 = @raw_data_1['Search']
@@ -45,5 +92,3 @@ class MoviesController < ApplicationController
     # # @data_7 = @raw_data_7['Search']
 
     # @data = @data_1 + @data_2 + @data_3 + @data_4 + @data_5 + @data_6
-  end
-end
