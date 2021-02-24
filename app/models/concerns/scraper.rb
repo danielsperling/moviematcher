@@ -16,6 +16,7 @@ class Scraper
       movie_info = {
         title: scrape.css('div.lister-item-content').css('h3').css('a').text,
         year: scrape.css('div.lister-item-content').css('span.lister-item-year').text,
+        genre: scrape.css('div.lister-item-content').css('p').css('span.genre').text,
         plot: scrape.css('div.lister-item-content').css('p')[1].text,
         poster: scrape.css('div.lister-item-image.ribbonize > a > img').map { |img| img['loadlate'] }
       }

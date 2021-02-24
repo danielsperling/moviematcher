@@ -16,23 +16,21 @@
     </div>
   </div>
 
-  <div class="row">
-
-    <% @movies.each do |display|  %>
-        <div class="col-12 col-xl-4" id="movie-card">
-          <%= image_tag 'Sexybeast.png', class: 'movie-poster' %>
-
-          <div class="overlay overlay--blur">
-            <h3><%= display.title %></h3>
-            <h4>⭐️ <%= display.rating %></h4>
-            <div>
-              <h5><%= display.description %></h5>
-            </div>
-          </div>
+<div class="row"> 
+  <% @movies.each do |display|  %>
+    <div class="col-12" id="movie-card">
+      <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
+      <div class="overlay overlay--blur">
+        <h3><%= display.title %></h3>
+        <h5> <%= display.year %></h5>
+        <h6> <%= display.genre %></h6>
+        <div>
+          <h5><%= display.plot %></h5>
         </div>
-
-    <% end %>
-  </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 </div>  
 
