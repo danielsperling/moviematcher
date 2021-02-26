@@ -4,8 +4,6 @@ class MoviesController < ApplicationController
     @title = params['title']
     @genre = params['genre']
 
-    @movies = Movie.where('title LIKE ?', "%#{@title}%") if params[:title]
-
     @movies = if params[:genre] == 'Action'
                 Movie.where('genre LIKE ?', "%#{@genre}%")
               elsif params[:genre] == 'Comedy'
@@ -21,5 +19,7 @@ class MoviesController < ApplicationController
               else
                 Movie.all
               end
+
+    @movies = Movie.where('title LIKE ?', "%#{@title}%") if params[:title]
   end
 end
