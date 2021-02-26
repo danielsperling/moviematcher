@@ -23,6 +23,16 @@ fantasy = Genre.create(genre: 'Fantasy')
 fantasy.save!
 puts 'Genres Created'
 
+
+
+<%= form_tag(movies_path, method: :get) do %>
+  <%= text_field_tag(:title, params[:title]) %>
+  <%= submit_tag("Title") %>
+  <% end %>
+
+
+
+
 @movies = Movie.all
 @search = params['search']
 if @search.present?

@@ -1,7 +1,10 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @title = params['title']
     @genre = params['genre']
+
+    @movies = Movie.where('title LIKE ?', "%#{@title}%") if params[:title]
 
     @movies = if params[:genre] == 'Action'
                 Movie.where('genre LIKE ?', "%#{@genre}%")
