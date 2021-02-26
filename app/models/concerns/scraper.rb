@@ -6,16 +6,14 @@ class Scraper
     page = 1
     last_page = 10
 
+    movies = []
+
     while page <= last_page
 
-      movies = []
       url = "https://www.imdb.com/search/keyword/?ref_=kw_ref_gnr&sort=moviemeter,asc&mode=detail&page=#{page}&genres=Action"
       unparsed_page = HTTParty.get(url)
       parsed_page = Nokogiri::HTML(unparsed_page.body)
-
       movie_card = parsed_page.css('div.lister-item.mode-detail')
-      # movie_card = parsed_page.css('div.lister-item')
-      # card_info = parsed_page.css('div.lister-item-content')
 
       movie_card.each do |scrape|
         movie_info = {
@@ -30,6 +28,7 @@ class Scraper
       page += 1
       sleep(0.5)
     end
+    movies
   end
 end
 
