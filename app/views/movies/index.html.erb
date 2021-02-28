@@ -41,7 +41,7 @@
   </div>
 
   <br> <br> <br>
-  <%= will_paginate @movies, class:'pagination justify-content-center' %>
+  <%= will_paginate @movies, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 
 </div>
 
