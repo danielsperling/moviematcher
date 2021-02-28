@@ -26,14 +26,14 @@
 
   <div class="row"> 
     <% @movies.each do |display|  %>
-      <div class="col-md-6 col-xs-12" id="movie-card">
+      <div id="movie-card">
         <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
         <div class="overlay overlay--blur">
           <h3><%= display.title %></h3>
           <h5> <%= display.year %></h5>
           <h6> <%= display.genre %></h6>
           <div>
-            <h5><%= display.plot %></h5>
+            <h6><%= display.plot %></h6>
           </div>
         </div>
       </div>
