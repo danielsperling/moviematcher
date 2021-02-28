@@ -1,35 +1,32 @@
 <div class="container">
 
-  <div class="row"> 
+ <div class="row">
     <div>
-    <form action="/movies" method="get">
-      <input id="title" name="title" type="text" />
-      <input type="submit" class="btn-btn-primary" value="Search by Title">
-    </form>
-
+      <form action="/movies" method="get">
+        <input id="title" name="title" type="text" />
+        <input type="submit" class="btn-btn-primary" value="Search by Title">
+      </form>
     </div>
-
-
     <form action="/movies" method="get">
-            <div>
-              <label for="genre"></label>
-              <select id="genre" name="genre" >
-                <option value="">Select Category:</option>
-                <option value="Action">Action</option>
-                <option value="Comedy">Comedy</option>
-                <option value="Mystery">Mystery</option>
-                <option value="Sci-Fi">Sci-Fi</option>
-                <option value="Adventure">Adventure</option>
-                <option value="Fantasy">Fantasy</option>
-              </select>
-                  <input type="submit" class="btn-btn-primary" value="Search By Genre">
-
-            </div>
+      <div>
+        <label for="genre"></label>
+          <select id="genre" name="genre" >
+            <option value="">Select Category:</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Fantasy">Fantasy</option>
+          </select>
+        <input type="submit" class="btn-btn-primary" value="Search By Genre">
+      </div>
     </form>
+  </div>
 
-
+  <div class="row"> 
     <% @movies.each do |display|  %>
-      <div class="col-xs-12" id="movie-card">
+      <div class="col-md-6 col-xs-12" id="movie-card">
         <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
         <div class="overlay overlay--blur">
           <h3><%= display.title %></h3>
