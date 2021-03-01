@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'user_profile', to: 'pages#user_profile'
 
-  resources :movies, only: [:index]
+  resources :movies, only: %i[index show]
 end
