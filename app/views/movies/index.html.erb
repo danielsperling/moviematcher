@@ -31,7 +31,7 @@
         <div id="movie-card">
           <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
           <div class="overlay overlay--blur">
-            <h3><%= display.title %></h3>
+            <h3><%= link_to display.title, movie_path(display) %></h3>
             <h5> <%= display.year %></h5>
             <h6> <%= display.genre %></h6>
             <div>
@@ -41,6 +41,8 @@
         </div>
       <% end %>
   </div>
+
+
 
   <br> <br> <br>
   <%= will_paginate @movies, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
