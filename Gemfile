@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Gems Added by me
-gem 'bootstrap', '~> 5.0.0.beta1'
+gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'devise', '~> 4.2'
 gem 'httparty', '~> 0.13.7'
 gem 'json', '~> 1.8', '>= 1.8.3'

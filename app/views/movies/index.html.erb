@@ -1,6 +1,6 @@
 <div class="container">
 
- <div class="row">
+  <div class="row">
     <div>
       <form action="/movies" method="get">
         <input id="title" name="title" type="text" />
@@ -25,19 +25,19 @@
   </div>
 
   <div class="row"> 
-    <% @movies.each do |display|  %>
-      <div id="movie-card">
-        <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
-        <div class="overlay overlay--blur">
-          <h3><%= display.title %></h3>
-          <h5> <%= display.year %></h5>
-          <h6> <%= display.genre %></h6>
-          <div>
-            <h6><%= display.plot %></h6>
+      <% @movies.each do |display|  %>
+        <div id="movie-card">
+          <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
+          <div class="overlay overlay--blur">
+            <h3><%= display.title %></h3>
+            <h5> <%= display.year %></h5>
+            <h6> <%= display.genre %></h6>
+            <div>
+              <h6><%= display.plot %></h6>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 
   <br> <br> <br>
