@@ -5,21 +5,21 @@ class MoviesController < ApplicationController
     @genre = params['genre']
 
     @movies = if params[:genre] == 'Action'
-                Movie.where('genre LIKE ?', "%#{@genre}%")
+                Movie.paginate(page: params[:page], per_page: 32).where('genre LIKE ?', "%#{@genre}%")
               elsif params[:genre] == 'Comedy'
-                Movie.where('genre LIKE ?', "%#{@genre}%")
+                Movie.paginate(page: params[:page], per_page: 32).where('genre LIKE ?', "%#{@genre}%")
               elsif params[:genre] == 'Mystery'
-                Movie.where('genre LIKE ?', "%#{@genre}%")
+                Movie.paginate(page: params[:page], per_page: 32).where('genre LIKE ?', "%#{@genre}%")
               elsif params[:genre] == 'Sci-Fi'
-                Movie.where('genre LIKE ?', "%#{@genre}%")
+                Movie.paginate(page: params[:page], per_page: 32).where('genre LIKE ?', "%#{@genre}%")
               elsif params[:genre] == 'Adventure'
-                Movie.where('genre LIKE ?', "%#{@genre}%")
+                Movie.paginate(page: params[:page], per_page: 32).where('genre LIKE ?', "%#{@genre}%")
               elsif params[:genre] == 'Fantasy'
-                Movie.where('genre LIKE ?', "%#{@genre}%")
+                Movie.paginate(page: params[:page], per_page: 32).where('genre LIKE ?', "%#{@genre}%")
               else
-                Movie.all
+                @movies = @movies.paginate(page: params[:page], per_page: 32)
               end
 
-    @movies = Movie.where('title LIKE ?', "%#{@title}%") if params[:title]
+    @movies = Movie.paginate(page: params[:page], per_page: 32).where('title LIKE ?', "%#{@title}%") if params[:title]
   end
 end
