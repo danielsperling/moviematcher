@@ -2,3 +2,6 @@
 <h5> <%= @movie.year %></h5>
 <h6> <%= @movie.genre %></h6>
 <h6><%= @movie.plot %></h6>
+
+
+<%= link_to "Favorite", favorite_path(movie: @movie.id), method: :patch %>
