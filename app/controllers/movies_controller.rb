@@ -25,5 +25,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @favorite_exist = Favorite.where(movie_id: @movie, user_id: current_user) == [] ? false : true
   end
 end
