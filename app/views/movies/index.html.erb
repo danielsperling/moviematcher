@@ -28,11 +28,12 @@
 
 
   </div>
-  
+    
+    <div class="row">
 
-  <div class="row">
-  <div class="col-md-12 col-xs-6 movies">
-<% @movies.each do |display|  %>
+
+    <div class="col-md-12 box1">
+      <% @movies.each do |display|  %>
     <div id="movie-card">
       <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
       <div class="overlay overlay--blur">
@@ -45,9 +46,8 @@
       </div>
     </div>
   <% end %>
-  </div>
-  </div>
-
+    
+    </div>
 
 
 
