@@ -1,1 +1,12 @@
+.container{
+    border: 5px blue solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
 
+
+.movies{
+    border: 1px red solid;
+}

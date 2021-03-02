@@ -5,13 +5,12 @@
   margin-right: 25px;
   align-items: center;
   justify-content: center;
+  float: left;
 }
 
 .movie-poster {
   display: block;
   width: 250px;
-  display: flex;
-  flex-direction: row;
 }
 
 .overlay {
