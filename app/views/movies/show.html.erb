@@ -4,4 +4,4 @@
 <h6><%= @movie.plot %></h6>
 
 
-<%= link_to "Favorite", favorite_path(movie: @movie.id), method: :patch %>
+<%= link_to "Favorite", favorites_update_path(movie: @movie) %>
