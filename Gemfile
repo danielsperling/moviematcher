@@ -32,13 +32,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'devise', '~> 4.2'
 gem 'httparty', '~> 0.13.7'
+gem 'jquery-rails'
 gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'nokogiri'
 gem 'pg'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
-
 
 # --------
 
