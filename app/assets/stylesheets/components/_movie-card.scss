@@ -2,16 +2,16 @@
   position: relative;
   width: 250px;
   margin-top: 50px;
-  margin-right: 25px;
+  margin-right: 35px;
+  margin-left: 35px;
   align-items: center;
   justify-content: center;
+  float: left;
 }
 
 .movie-poster {
   display: block;
   width: 250px;
-  display: flex;
-  flex-direction: row;
 }
 
 .overlay {

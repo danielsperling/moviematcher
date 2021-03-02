@@ -97,3 +97,45 @@ puts 'Genres Created'
 # # # @data_7 = @raw_data_7['Search']
 
 # # @data = @data_1 + @data_2 + @data_3 + @data_4 + @data_5 + @data_6
+
+
+
+
+<% @movies.each do |display|  %>
+    <div id="movie-card">
+      <%= image_tag display.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
+      <div class="overlay overlay--blur">
+        <h3><%= link_to display.title, movie_path(display) %></h3>
+        <h5> <%= display.year %></h5>
+        <h6> <%= display.genre %></h6>
+        <div>
+          <h6><%= display.plot %></h6>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+  <div class="col-md-6">
+  <form action="/movies" method="get">
+    <input id="title" name="title" type="text" />
+    <input type="submit" class="btn-btn-primary" value="Search by Title">
+  </form>
+</div>
+<div class="col-md-6">
+  <form action="/movies" method="get">
+    <div>
+      <label for="genre"></label>
+        <select id="genre" name="genre" >
+          <option value="">Select Category:</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Fantasy">Fantasy</option>
+        </select>
+      <input type="submit" class="btn-btn-primary" value="Search By Genre">
+    </div>
+  </form>
+</div>

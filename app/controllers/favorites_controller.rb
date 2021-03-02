@@ -1,16 +1,17 @@
 class FavoritesController < ApplicationController
-  def update
-    favorite = Favorite.where(movie_id: Movie.find(params[:movie]), user_id: current_user)
-    if favorite == []
-      Favorite.create(movie_id: Movie.find(params[:movie]), user_id: current_user)
-      @favorite_exist = true
+  def index
+    @favorites = Favorite.all
+  end
+
+  def create
+    @favorite = Favotire.new
+    @movie = Movie.find(params[:id])
+    @favorite.user = current_user
+    @favorite.movie = @movie
+    if @favorite.save
+      redirect_to movies_path
     else
-      favorite.destroy_all
-      @favorite_exist = false
-    end
-    respond_to do |format|
-      format.html {}
-      format.js {}
+      render_new
     end
   end
 end

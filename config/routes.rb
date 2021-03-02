@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'user_profile', to: 'pages#user_profile'
 
   resources :movies, only: %i[index show]
+
+  resources :favorites, only: %i[create destroy]
 end

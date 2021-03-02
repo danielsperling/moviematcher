@@ -1,1 +1,14 @@
+.container{
+    border: 5px blue solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+ 
+}
 
+.box1{
+    border: 1px red solid;
+    background: lightblue;
+
+}
