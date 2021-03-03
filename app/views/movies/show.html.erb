@@ -4,4 +4,7 @@
 <h6><%= @movie.plot %></h6>
 
 
-<%= link_to "Favorite", favorites_path(movie: @movie)%>
+
+
+  <%= link_to "favorite", favorites_path(movie: @movie, type: "favorite"), method: :post %>
+  <%= link_to "unfavorite", favorites_path(movie: @movie, type: "unfavorite"), method: :post %>

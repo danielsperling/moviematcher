@@ -4,14 +4,13 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favotire.new
-    @movie = Movie.find(params[:id])
-    @favorite.user = current_user
-    @favorite.movie = @movie
-    if @favorite.save
-      redirect_to movies_path
-    else
-      render_new
+    @movie = Movie.find(params[:movie])
+    @user = current_user
+    @type = params[:type]
+    if @type == 'favorite'
+      @user.favorites << @movie
+    elsif @type == 'unfavorite'
+      @user.favorites.delete(@movie)
     end
   end
 end
