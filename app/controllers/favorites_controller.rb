@@ -4,13 +4,19 @@ class FavoritesController < ApplicationController
   end
 
   def create
+    @favorite = Favorite.new
     @movie = Movie.find(params[:movie])
-    @user = current_user
+    @favorite.user = current_user
+    @favorite.movie = @movie
     @type = params[:type]
     if @type == 'favorite'
-      @user.favorites << @movie
+      @favorite.save
     elsif @type == 'unfavorite'
-      @user.favorites.delete(@movie)
+      @favorite.delete(@favorite)
     end
+  end
+
+  def favorite_params
+    params.require(:favorite).permit(:movie_id, :user_id)
   end
 end
