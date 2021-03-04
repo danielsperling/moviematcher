@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'user_profile', to: 'pages#user_profile'
 
-  resources :movies, only: %i[index show]
-
-  resources :favorites, only: %i[create destroy]
+  resources :movies, only: %i[index show] do
+    put :favorite, on: :member
+  end
 end
