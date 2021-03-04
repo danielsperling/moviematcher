@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @favorite_movies = FavoriteMovie.all
+
     @title = params['title']
     @genre = params['genre']
 
