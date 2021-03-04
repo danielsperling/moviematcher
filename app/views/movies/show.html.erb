@@ -6,5 +6,5 @@
 
 
 
-  <%= link_to "favorite", favorites_path(movie: @movie, type: "favorite"), method: :post %>
-  <%= link_to "unfavorite", favorites_path(movie: @movie, type: "unfavorite"), method: :post %>
+  <%= link_to "favorite", favorite_movie_path(@movie, type: "favorite"), method: :put %>
+  <%= link_to "unfavorite", favorite_movie_path(@movie, type: "unfavorite"), method: :put %>
