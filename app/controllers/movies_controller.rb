@@ -29,13 +29,12 @@ class MoviesController < ApplicationController
 
   def favorite
     @movie = Movie.find(params[:id])
-    @user = current_user
-    @type = params[:type]
-    if @type == 'favorite'
-      @user.favorites << @movie
-      @user.save
-    elsif @type == 'unfavorite'
-      @user.favorites.delete(@movie)
+    type = params[:type]
+    if type == 'favorite'
+      current_user.favorites << @movie
+
+    elsif type == 'unfavorite'
+      current_user.favorites.delete(@movie)
     end
   end
 end
