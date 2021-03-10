@@ -15,11 +15,29 @@
 
     </div>
   </div>
-  <% current_user.favorite_movies.each do |display| %>
-    <h3> <%= display.movie.title %></h3>
-  <% end %>
+  <div class="row">
+      <h3>Favorite Movies</h3>
+
+    <div class="box1">
+      <% current_user.favorite_movies.each do |display| %>
+      <div id="movie-card">
+        <%= image_tag display.movie.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
+          <div class="overlay overlay--blur">
+            <h3> <%= display.movie.title %></h3>
+            <h5> <%= display.movie.year %></h5>
+            <h6> <%= display.movie.genre %></h6>
+            <div> 
+              <h6><%= display.movie.plot %></h6>
+            </div>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  
 </div>  
 
 
 
 
+ 

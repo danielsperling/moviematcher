@@ -5,7 +5,7 @@
 
 
 
-<% unless current_user.favorite_movies.exists?(id: @movie.id) -%>
+<% unless current_user.favorite_movies.exists?(@movie.id) %>
   <%= link_to "favorite", favorite_movie_path(@movie, type: "favorite"), method: :put %>
   <% else %>
   <%= link_to "unfavorite", favorite_movie_path(@movie, type: "unfavorite"), method: :put %>
