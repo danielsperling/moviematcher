@@ -1,7 +1,7 @@
 <div class="container">
   
   <div class="row">
-    <div class="col-sm-12 col-xl-6 profile-information">
+    <div class="col-sm-12 col-xl-6 profile-information" >
       <h1>Hello <%= current_user.username %></h1>
     </div>
     <div class="col-sm-12 col-xl-6 avatar-bio">
@@ -11,12 +11,16 @@
       <% else  %>
         <%= current_user.bio %>
       <% end %>
-            <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: "btn btn-outline-dark" %> 
-
+        <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: "btn btn-outline-dark" %> 
     </div>
   </div>
+
+
+
   <div class="row">
+    <div class="text-center">
       <h3>Favorite Movies</h3>
+    </div>
 
     <div class="box1">
       <% current_user.favorite_movies.each do |display| %>
