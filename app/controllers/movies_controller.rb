@@ -39,9 +39,9 @@ class MoviesController < ApplicationController
       @favorite_exists = false
 
     end
-    respond_to do |format|
-      format.html {}
-      format.js {}
-    end
+    # respond_to do |format|
+    #   format.html { render 'favorite', layout: false }
+    #   format.js { render 'favorite', layout: false }
+    # end
   end
 end

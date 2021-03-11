@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+
   def favorite_text
     @favorite_exists ? 'unfavorite' : 'favorite'
   end
