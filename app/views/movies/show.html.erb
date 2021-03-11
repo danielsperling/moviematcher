@@ -6,9 +6,9 @@
 
 
 <% if current_user.favorite_movies.exists?(movie_id: @movie.id) %>
-  <%= link_to "unfavorite", favorite_movie_path(@movie, type: "unfavorite"), method: :put %>
+  <%= link_to "unfavorite", favorite_movie_path(@movie, type: "unfavorite"), method: :put, :remote => true %>
 <% else %>
-  <%= link_to "favorite", favorite_movie_path(@movie, type: "favorite"), method: :put %>
+  <%= link_to "favorite", favorite_movie_path(@movie, type: "favorite"), method: :put, :remote => true %>
 <% end %>
 
-  <%#= link_to favorite_text, favorite_movie_path(@movie, type: "favorite"), method: :put, id: "favorite_link" %>
+  <%#= link_to favorite_text, favorite_movie_path(@movie, type: "favorite"), method: :put, id: "favorite_link", :remote => true %>
