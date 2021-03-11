@@ -51,9 +51,3 @@
   <br>
   <%= will_paginate @movies, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>
-
-
-
-    <% @favorite_movies.each do |display| %>
-  <h3> <%= display.movie.title %></h3>
-  <% end %>

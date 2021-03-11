@@ -1,7 +1,7 @@
 <div class="container">
   
   <div class="row">
-    <div class="col-sm-12 col-xl-6 profile-information">
+    <div class="col-sm-12 col-xl-6 profile-information" >
       <h1>Hello <%= current_user.username %></h1>
     </div>
     <div class="col-sm-12 col-xl-6 avatar-bio">
@@ -11,18 +11,37 @@
       <% else  %>
         <%= current_user.bio %>
       <% end %>
-            <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: "btn btn-outline-dark" %> 
-
+        <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: "btn btn-outline-dark" %> 
     </div>
   </div>
 
-    <% @favorite_movies.each do |display| %>
-  <h3> <%= display.movie.title %></h3>
-  <% end %>
+
+
+  <div class="row">
+    <div class="text-center">
+      <h3>Favorite Movies</h3>
+    </div>
+
+    <div class="box1">
+      <% current_user.favorite_movies.each do |display| %>
+      <div id="movie-card">
+        <%= image_tag display.movie.poster.gsub(/\[/, "").gsub(/\]/, "").gsub(/\"/, "") , class: 'movie-poster' %>
+          <div class="overlay overlay--blur">
+            <h3> <%= display.movie.title %></h3>
+            <h5> <%= display.movie.year %></h5>
+            <h6> <%= display.movie.genre %></h6>
+            <div> 
+              <h6><%= display.movie.plot %></h6>
+            </div>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  
 </div>  
 
 
 
 
-
-
+ 

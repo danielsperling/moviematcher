@@ -1,8 +1,6 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
-    @favorite_movies = FavoriteMovie.all
-
     @title = params['title']
     @genre = params['genre']
 
@@ -27,6 +25,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @favorite_exists = !(FavoriteMovie.where(movie: @movie, user: current_user) == [])
   end
 
   def favorite
@@ -34,9 +33,15 @@ class MoviesController < ApplicationController
     type = params[:type]
     if type == 'favorite'
       current_user.favorites << @movie
-
+      @favorite_exists = true
     elsif type == 'unfavorite'
       current_user.favorites.delete(@movie)
+      @favorite_exists = false
+
+    end
+    respond_to do |format|
+      format.html {}
+      format.js {}
     end
   end
 end
